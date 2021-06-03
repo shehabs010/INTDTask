@@ -1,0 +1,39 @@
+li{
+    color: #fff;
+    display: flex;
+    align-items: baseline;
+}
+
+
+.button__actions {
+    display: flex;
+    margin-left: auto;
+    flex-wrap: nowrap;
+}
+li p span.clock {
+    font-size: 0.7rem;
+    color: #bdbdbd;
+}
+li p span.date {
+    font-size: 0.8rem;
+    color: #bdbdbd;
+}
+li button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    border: 0;
+    margin-left: 4px;
+}
+li button.complete {
+ background-color: teal;
+ color: #fff;
+}
+li button.edit{
+    background-color: #788189;
+    color: #fff;
+}
+li button.delete{
+    background-color: #ee5253;
+    color: #fff;
+}

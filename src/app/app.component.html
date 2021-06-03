@@ -1,0 +1,49 @@
+<div class="add__tasks">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <add-todo
+            (todoAdded)="handelEvent($event)"
+            [nwItem]="editObject"
+          ></add-todo>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="task__list w-100 py-5">
+<div class="container">
+
+    <div class="row">
+        <div class="col-12 d-flex flex-wrap">
+            <div class="task__list--left col-md-6 col-12">
+                <h2>Tasks</h2>
+                <!-- <button (click)="this.endTimeNotification()">sortByDate</button> -->
+                <ul class="list-unstyled">
+                    <todo-item
+                    *ngFor="let todo of sortByTasks()"
+                    [todo]="todo"
+                    (complete)="handelEventComplete($event)"
+                    (edit)="handelEventEdit($event)"
+                    (delete)="handelEventDelete($event)"
+                  ></todo-item>
+                </ul>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="">
+                  <h2>completed List</h2>
+                  <ul class="list-unstyled completeTasks" *ngIf="completedTodoList && completedTodoList.length > 0">
+                  <todo-item
+                    *ngFor="let todo of sortByDoneTasks()"
+                    (complete)="handelEventNotComplete($event)"
+                    (delete)="handelEventDelete($event)"
+                    [todo]="todo"
+                  ></todo-item>
+                  </ul>
+                </div>
+            </div>
+        </div>
+         
+
+    </div>
+  </div>
+</div>

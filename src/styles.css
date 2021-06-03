@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #2f3437;
+    font-family: cursive;
+
+}.completeTasks li p.task-text{
+    text-decoration: line-through;
+    color: #ca5454;
+}

@@ -1,0 +1,45 @@
+.todo__inputs{
+
+}
+.todo__inputs ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #bdbdbd;
+    opacity: 1; /* Firefox */
+  }
+  
+  .todo__inputs :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #bdbdbd;
+  }
+  
+  .todo__inputs ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #bdbdbd;
+  }
+
+  .todo__inputs ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+.todo__inputs input[type="text"],[type="datetime-local"]{
+    background:#373c3f;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid #3e4245;
+    color: #bdbdbd;
+    transition: all ease-in-out 0.3s;
+}
+
+@media (max-width: 767px) {
+  .todo__inputs button{
+    background-color:#8f9295;
+    border:0;
+    width:100%
+}
+  
+}
+@media (min-width: 767.9px) {
+  .todo__inputs button{
+    background-color:#8f9295;
+    border:0
+}
+}
+.form-control:focus{
+    box-shadow: unset;
+}

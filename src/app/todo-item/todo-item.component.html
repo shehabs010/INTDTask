@@ -1,0 +1,24 @@
+<li [id]="todo.id" class="d-flex flex-column">
+    <div class="d-flex flex-row w-100">
+        <p class="d-flex flex-column w-100 mb-2">
+        <span class="clock">
+            <i class="fas fa-clock"></i> {{todo.dueDate | date:'shortTime'}}
+        </span>
+        <span class="date">
+            <i class="fas fa-calendar-alt"></i> {{todo.dueDate | date:'shortDate'}}
+        </span>
+        </p>
+      <div class="button__actions">
+        <button type="button" *ngIf="!todo.status; else isStatus" (click)="isComplete(todo.id)" class="complete"><i class="fas fa-check-double"></i></button>
+        <ng-template #isStatus>
+            <button type="button" (click)="isComplete(todo.id)"><i class="fas fa-undo"></i></button>
+        </ng-template>
+        <button type="button" *ngIf="!todo.status;" class="edit" (click)="isEdit(todo)"><i class="fas fa-user-edit"></i></button>
+        <button type="button" class="delete" (click)="isDelete(todo)"><i class="fas fa-times"></i></button>
+    </div>
+</div>
+    <p class="task-text mb-0">
+        {{todo.text}}
+    </p>
+
+</li>
