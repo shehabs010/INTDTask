@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
       if (checkEditItem != null) {
         clearTimeout(checkEditItem.notification);
         let indexOfItem = this.todos.indexOf(data);
-        // data.isDisabled= false;
+        data.isDisabled= false;
         this.todos.splice(indexOfItem, 1);
         
         this.todos.push(data);
