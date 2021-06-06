@@ -29,6 +29,10 @@ li button.complete {
  background-color: teal;
  color: #fff;
 }
+button.complete.disabled {
+    background: #00808070 !important;
+    cursor: not-allowed;
+}
 li button.edit{
     background-color: #788189;
     color: #fff;
