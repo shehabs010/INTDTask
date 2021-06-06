@@ -94,7 +94,7 @@ export class AppComponent implements OnInit {
   endTimeNotification(taskNotification: Todo) {
     var m1 = moment(new Date(taskNotification.dueDate));
     var m2 = moment(new Date());
-    var m3 = m1.diff(m2, 'minutes') * 60;
+    var m3 = (m1.diff(m2, 'minutes')+1) * 60;
 
   
     if (m3 > 0) {
