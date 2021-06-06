@@ -22,7 +22,7 @@
                     <todo-item
                     *ngFor="let todo of sortByTasks()"
                     [todo]="todo"
-                    [isDisabled]="isDisabled"
+                  
                     (complete)="handelEventComplete($event)"
                     (edit)="handelEventEdit($event)"
                     (delete)="handelEventDelete($event)"

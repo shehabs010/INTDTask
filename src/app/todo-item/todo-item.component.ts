@@ -16,7 +16,6 @@ export class TodoItemComponent implements OnInit {
     status: false,
     notification:null
   };
-@Input() isDisabled = false;
   
   @Output() complete  = new EventEmitter<{id:number}>();
   @Output() edit= new EventEmitter<{}>();

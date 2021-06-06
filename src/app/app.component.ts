@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
         clearTimeout(checkEditItem.notification);
         let indexOfItem = this.todos.indexOf(data);
         this.todos.splice(indexOfItem, 1);
-        this.isDisabled =false;
+       
         this.todos.push(data);
         window.localStorage.setItem('todos-List', JSON.stringify(this.todos));
         this.endTimeNotification(data);
@@ -69,7 +69,6 @@ export class AppComponent implements OnInit {
   }
   handelEventEdit(serverEditData: any) {
     this.editObject = serverEditData;
-    this.isDisabled = true;
   }
   handelEventDelete(serverDeleteData: any) {
     if (serverDeleteData.status) {
