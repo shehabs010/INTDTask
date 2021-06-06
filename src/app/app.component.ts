@@ -32,8 +32,8 @@ export class AppComponent implements OnInit {
       let checkEditItem = this.todos.find((x) => x.id == data.id);
       if (checkEditItem != null) {
         clearTimeout(checkEditItem.notification);
+        checkEditItem.isDisabled= false;
         let indexOfItem = this.todos.indexOf(data);
-        data.isDisabled= false;
         this.todos.splice(indexOfItem, 1);
         
         this.todos.push(data);
