@@ -25,8 +25,9 @@ export class AddTodoComponent implements OnInit {
   }); }
   
   ngOnInit(): void {
-    // var today = new Date().toISOString().split('T')[0];
-    // document.getElementsByName("date-time")[0].setAttribute('min', today)
+    var today = new Date().toISOString();
+    var iso = today.substring(0,today.length-1);
+    document.getElementsByName("date-time")[0].setAttribute('min', iso)
   }
 
 

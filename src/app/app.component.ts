@@ -96,7 +96,7 @@ export class AppComponent implements OnInit {
     var m2 = moment(new Date());
     var m3 = m1.diff(m2, 'minutes') * 60;
 
-    console.log(m3);
+  
     if (m3 > 0) {
       taskNotification.notification = setTimeout(() => {
         this.showNotifcation(taskNotification);
