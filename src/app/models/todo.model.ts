@@ -3,5 +3,6 @@ export interface  Todo {
     text: string,
     dueDate: string,
     status:boolean,
-    notification:any
+    notification:any,
+    isDisabled:boolean
 }

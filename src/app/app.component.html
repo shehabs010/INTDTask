@@ -17,12 +17,11 @@
         <div class="col-12 d-flex flex-wrap">
             <div class="task__list--left col-md-6 col-12">
                 <h2>Tasks</h2>
-                <!-- <button (click)="this.endTimeNotification()">sortByDate</button> -->
+                
                 <ul class="list-unstyled">
                     <todo-item
                     *ngFor="let todo of sortByTasks()"
                     [todo]="todo"
-                  
                     (complete)="handelEventComplete($event)"
                     (edit)="handelEventEdit($event)"
                     (delete)="handelEventDelete($event)"
