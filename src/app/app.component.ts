@@ -18,12 +18,7 @@ export class AppComponent implements OnInit {
   )
     ? JSON.parse(window.localStorage.getItem('todos-Done-List') || '[]')
     : [];
-  editObject:Todo = {
-    dueDate: '',
-    id: 0,
-    text: '',
-    status: false,
-    notification:null,
+  editObject={
     isDisabled:false
   }; 
   endTaskTime = 0;
@@ -40,7 +35,7 @@ export class AppComponent implements OnInit {
       if (checkEditItem != null) {
         clearTimeout(checkEditItem.notification);
         checkEditItem.isDisabled= false;
-        let indexOfItem = this.todos.indexOf(data);
+        let indexOfItem = this.todos.indexOf(checkEditItem);
         this.todos.splice(indexOfItem, 1);
         
         this.todos.push(data);
@@ -98,7 +93,7 @@ export class AppComponent implements OnInit {
         JSON.stringify(this.completedTodoList)
       );
     } else {
-      let todoItem = this.todos.filter((x) => x.id === serverDeleteData)[0];
+      let todoItem = this.todos.filter((x) => x.id === serverDeleteData.id)[0];
       let itemIndex = this.todos.indexOf(todoItem);
       this.todos.splice(itemIndex, 1);
       window.localStorage.setItem('todos-List', JSON.stringify(this.todos));
