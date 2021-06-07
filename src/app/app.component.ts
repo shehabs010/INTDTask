@@ -18,7 +18,14 @@ export class AppComponent implements OnInit {
   )
     ? JSON.parse(window.localStorage.getItem('todos-Done-List') || '[]')
     : [];
-  editObject = null;
+  editObject:Todo = {
+    dueDate: '',
+    id: 0,
+    text: '',
+    status: false,
+    notification:null,
+    isDisabled:false
+  }; 
   endTaskTime = 0;
   isDisabled=false;
 
@@ -54,6 +61,7 @@ export class AppComponent implements OnInit {
     this.todos.splice(x, 1);
     window.localStorage.setItem('todos-List', JSON.stringify(this.todos));
   }
+
   handelEventNotComplete(serverDatas: any) {
     let unTodoItem = this.completedTodoList.filter(
       (x) => x.id == serverDatas
@@ -69,9 +77,14 @@ export class AppComponent implements OnInit {
     window.localStorage.setItem('todos-List', JSON.stringify(this.todos));
   }
   handelEventEdit(serverEditData: any) {
-    serverEditData.isDisabled = true;
-    this.editObject = serverEditData;
-    // serverEditData.isDisabled= true;
+    if(this.editObject.isDisabled){
+      this.editObject.isDisabled= false; 
+      this.editObject = serverEditData;
+      serverEditData.isDisabled = true;
+    }else{
+      this.editObject = serverEditData;
+      serverEditData.isDisabled = true;
+    }
   }
   handelEventDelete(serverDeleteData: any) {
     if (serverDeleteData.status) {
