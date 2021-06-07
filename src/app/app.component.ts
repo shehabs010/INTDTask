@@ -80,7 +80,7 @@ export class AppComponent implements OnInit {
     if(this.editObject.isDisabled){
       this.editObject.isDisabled= false; 
       this.editObject = serverEditData;
-      serverEditData.isDisabled = true;
+      this.editObject.isDisabled = true;
     }else{
       this.editObject = serverEditData;
       serverEditData.isDisabled = true;
